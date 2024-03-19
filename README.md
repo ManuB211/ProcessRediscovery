@@ -30,7 +30,7 @@ npm run dev
 
 <h1>Structure of the Project<h1>
 
-<h3>Client<h3>
+<h3>Client</h3>
 
 <ul>
 <li>index.tsx: Holds the structure of the webapp (navigation, etc) and the websockets that are used</li>
