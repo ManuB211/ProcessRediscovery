@@ -1,0 +1,499 @@
+<testset xmlns="http://cpee.org/ns/properties/2.0">
+<subscriptions xmlns="http://riddl.org/ns/common-patterns/notifications-producer/2.0">
+  <subscription xmlns="http://riddl.org/ns/common-patterns/notifications-producer/2.0" id="_student_ga83had" url="https://lehre.bpm.in.tum.de/ports/10169">
+    <topic id="activity">
+      <event>done</event>
+    </topic>
+  </subscription>
+</subscriptions>
+  <executionhandler>ruby</executionhandler>
+  <dataelements>
+    <loop>0</loop>
+    <condition1>0</condition1>
+    <loop2>0</loop2>
+  </dataelements>
+  <endpoints>
+    <timeout>https-post://cpee.org/services/powernap.php</timeout>
+    <subprocess>https://cpee.org/flow/start/url/</subprocess>
+  </endpoints>
+  <attributes>
+    <info>TUM-Benzin-Pra-WS-23-2</info>
+    <creator>Christine Ashcreek</creator>
+    <author>Christine Ashcreek</author>
+    <modeltype>CPEE</modeltype>
+    <guarded>none</guarded>
+    <guarded_id/>
+    <model_uuid>e1a9f035-e2d5-491e-9a2a-d372f60295c7</model_uuid>
+    <model_version/>
+    <theme>extended</theme>
+    <design_dir>benzin.dir</design_dir>
+    <design_stage>development</design_stage>
+  </attributes>
+  <description>
+    <description xmlns="http://cpee.org/ns/description/1.0">
+      <manipulate id="a3" label="k">data.loop = Random.rand(15)</manipulate>
+      <loop mode="pre_test" condition="data.loop &gt; 0">
+        <_probability>
+          <_probability_min/>
+          <_probability_max/>
+          <_probability_avg/>
+        </_probability>
+        <call id="a2" endpoint="timeout">
+          <parameters>
+            <label>m</label>
+            <arguments>
+              <!--<timeout>10</timeout>-->
+              <timeout>2</timeout>
+            </arguments>
+          </parameters>
+          <annotations>
+            <_generic/>
+            <_timing>
+              <_timing_weight/>
+              <_timing_avg/>
+              <explanations/>
+            </_timing>
+            <_shifting>
+              <_shifting_type>Duration</_shifting_type>
+            </_shifting>
+            <_context_data_analysis>
+              <probes/>
+              <ips/>
+            </_context_data_analysis>
+            <report>
+              <url/>
+            </report>
+            <_notes>
+              <_notes_general/>
+            </_notes>
+          </annotations>
+          <documentation>
+            <input/>
+            <output/>
+            <implementation>
+              <description/>
+            </implementation>
+          </documentation>
+        </call>
+        <manipulate id="a21" label="o">data.loop -= 1</manipulate>
+        <manipulate id="a11" label="n">data.condition1 = Random.rand()</manipulate>
+        <choose mode="exclusive">
+          <alternative condition="data.condition1 &gt; 0.5">
+            <_probability>
+              <_probability_min/>
+              <_probability_max/>
+              <_probability_avg/>
+            </_probability>
+            <call id="a10" endpoint="timeout">
+              <parameters>
+                <label>txt</label>
+                <method>:post</method>
+                <arguments>
+                  <!--<timeout>10</timeout>-->
+                  <timeout>2</timeout>
+                </arguments>
+              </parameters>
+              <annotations>
+                <_generic/>
+                <_timing>
+                  <_timing_weight/>
+                  <_timing_avg/>
+                  <explanations/>
+                </_timing>
+                <_shifting>
+                  <_shifting_type>Duration</_shifting_type>
+                </_shifting>
+                <_context_data_analysis>
+                  <probes/>
+                  <ips/>
+                </_context_data_analysis>
+                <report>
+                  <url/>
+                </report>
+                <_notes>
+                  <_notes_general/>
+                </_notes>
+              </annotations>
+              <documentation>
+                <input/>
+                <output/>
+                <implementation>
+                  <description/>
+                </implementation>
+              </documentation>
+            </call>
+            <parallel wait="-1" cancel="last">
+              <parallel_branch>
+                <call id="a9" endpoint="timeout">
+                  <parameters>
+                    <label>30</label>
+                    <method>:post</method>
+                    <arguments>
+                      <!--<timeout>30</timeout>-->
+                      <timeout>6</timeout>
+                    </arguments>
+                  </parameters>
+                  <annotations>
+                    <_generic/>
+                    <_timing>
+                      <_timing_weight/>
+                      <_timing_avg/>
+                      <explanations/>
+                    </_timing>
+                    <_shifting>
+                      <_shifting_type>Duration</_shifting_type>
+                    </_shifting>
+                    <_context_data_analysis>
+                      <probes/>
+                      <ips/>
+                    </_context_data_analysis>
+                    <report>
+                      <url/>
+                    </report>
+                    <_notes>
+                      <_notes_general/>
+                    </_notes>
+                  </annotations>
+                  <documentation>
+                    <input/>
+                    <output/>
+                    <implementation>
+                      <description/>
+                    </implementation>
+                  </documentation>
+                </call>
+              </parallel_branch>
+              <parallel_branch>
+                <call id="a8" endpoint="timeout">
+                  <parameters>
+                    <label>302</label>
+                    <method>:post</method>
+                    <arguments>
+                      <!--<timeout>30</timeout>-->
+                      <timeout>6</timeout>
+                    </arguments>
+                  </parameters>
+                  <annotations>
+                    <_generic/>
+                    <_timing>
+                      <_timing_weight/>
+                      <_timing_avg/>
+                      <explanations/>
+                    </_timing>
+                    <_shifting>
+                      <_shifting_type>Duration</_shifting_type>
+                    </_shifting>
+                    <_context_data_analysis>
+                      <probes/>
+                      <ips/>
+                    </_context_data_analysis>
+                    <report>
+                      <url/>
+                    </report>
+                    <_notes>
+                      <_notes_general/>
+                    </_notes>
+                  </annotations>
+                  <documentation>
+                    <input/>
+                    <output/>
+                    <implementation>
+                      <description/>
+                    </implementation>
+                  </documentation>
+                </call>
+              </parallel_branch>
+              <parallel_branch pass="" local="">
+                <call id="a7" endpoint="timeout">
+                  <parameters>
+                    <label>303</label>
+                    <method>:post</method>
+                    <arguments>
+                      <!--<timeout>30</timeout>-->
+                      <timeout>6</timeout>
+                    </arguments>
+                  </parameters>
+                  <annotations>
+                    <_generic/>
+                    <_timing>
+                      <_timing_weight/>
+                      <_timing_avg/>
+                      <explanations/>
+                    </_timing>
+                    <_shifting>
+                      <_shifting_type>Duration</_shifting_type>
+                    </_shifting>
+                    <_context_data_analysis>
+                      <probes/>
+                      <ips/>
+                    </_context_data_analysis>
+                    <report>
+                      <url/>
+                    </report>
+                    <_notes>
+                      <_notes_general/>
+                    </_notes>
+                  </annotations>
+                  <documentation>
+                    <input/>
+                    <output/>
+                    <implementation>
+                      <description/>
+                    </implementation>
+                  </documentation>
+                </call>
+              </parallel_branch>
+              <parallel_branch pass="" local="">
+                <manipulate id="a1" label="304"/>
+              </parallel_branch>
+            </parallel>
+          </alternative>
+          <otherwise>
+            <manipulate id="a6" label="r0">data.loop2 = Random.rand(20)</manipulate>
+            <loop mode="pre_test" condition="data.loop2 &gt; 0">
+              <_probability>
+                <_probability_min/>
+                <_probability_max/>
+                <_probability_avg/>
+              </_probability>
+              <call id="a5" endpoint="timeout">
+                <parameters>
+                  <label>r1</label>
+                  <arguments>
+                    <!--<timeout>5</timeout>-->
+                    <timeout>1</timeout>
+                  </arguments>
+                </parameters>
+                <annotations>
+                  <_generic/>
+                  <_timing>
+                    <_timing_weight/>
+                    <_timing_avg/>
+                    <explanations/>
+                  </_timing>
+                  <_shifting>
+                    <_shifting_type>Duration</_shifting_type>
+                  </_shifting>
+                  <_context_data_analysis>
+                    <probes/>
+                    <ips/>
+                  </_context_data_analysis>
+                  <report>
+                    <url/>
+                  </report>
+                  <_notes>
+                    <_notes_general/>
+                  </_notes>
+                </annotations>
+                <documentation>
+                  <input/>
+                  <output/>
+                  <implementation>
+                    <description/>
+                  </implementation>
+                </documentation>
+              </call>
+              <call id="a20" endpoint="timeout">
+                <parameters>
+                  <label>r2</label>
+                  <method>:post</method>
+                  <arguments>
+                    <!--<timeout>20</timeout>-->
+                    <timeout>4</timeout>
+                  </arguments>
+                </parameters>
+                <code>
+                  <prepare/>
+                  <finalize output="result">data.loop2 -= 1</finalize>
+                  <update output="result"/>
+                  <rescue output="result"/>
+                </code>
+                <annotations>
+                  <_generic/>
+                  <_timing>
+                    <_timing_weight/>
+                    <_timing_avg/>
+                    <explanations/>
+                  </_timing>
+                  <_shifting>
+                    <_shifting_type>Duration</_shifting_type>
+                  </_shifting>
+                  <_context_data_analysis>
+                    <probes/>
+                    <ips/>
+                  </_context_data_analysis>
+                  <report>
+                    <url/>
+                  </report>
+                  <_notes>
+                    <_notes_general/>
+                  </_notes>
+                </annotations>
+                <documentation>
+                  <input/>
+                  <output/>
+                  <implementation>
+                    <description/>
+                  </implementation>
+                  <code>
+                    <description/>
+                  </code>
+                </documentation>
+              </call>
+              <parallel wait="-1" cancel="last">
+                <parallel_branch>
+                  <manipulate id="a12" label="r"/>
+                  <manipulate id="a14" label="rr"/>
+                  <manipulate id="a15" label="rrr"/>
+                </parallel_branch>
+                <parallel_branch>
+                  <manipulate id="a13" label="rrrr"/>
+                </parallel_branch>
+                <parallel_branch>
+                  <parallel wait="-1" cancel="last">
+                    <parallel_branch pass="" local="">
+                      <manipulate id="a16" label="r0"/>
+                    </parallel_branch>
+                    <parallel_branch pass="" local="">
+                      <manipulate id="a17" label="r1"/>
+                    </parallel_branch>
+                  </parallel>
+                </parallel_branch>
+                <parallel_branch pass="" local="">
+                  <choose mode="exclusive">
+                    <alternative condition="data.condition1 &gt; 0.65">
+                      <_probability>
+                        <_probability_min/>
+                        <_probability_max/>
+                        <_probability_avg/>
+                      </_probability>
+                      <call id="a18" endpoint="timeout">
+                        <parameters>
+                          <label>timeout</label>
+                          <arguments>
+                            <!--<timeout>20</timeout>-->
+                            <timeout>4</timeout>
+                          </arguments>
+                        </parameters>
+                        <annotations>
+                          <_generic/>
+                          <_timing>
+                            <_timing_weight/>
+                            <_timing_avg/>
+                            <explanations/>
+                          </_timing>
+                          <_shifting>
+                            <_shifting_type>Duration</_shifting_type>
+                          </_shifting>
+                          <_context_data_analysis>
+                            <probes/>
+                            <ips/>
+                          </_context_data_analysis>
+                          <report>
+                            <url/>
+                          </report>
+                          <_notes>
+                            <_notes_general/>
+                          </_notes>
+                        </annotations>
+                        <documentation>
+                          <input/>
+                          <output/>
+                          <implementation>
+                            <description/>
+                          </implementation>
+                        </documentation>
+                      </call>
+                    </alternative>
+                    <otherwise/>
+                  </choose>
+                </parallel_branch>
+                <parallel_branch pass="" local="">
+                  <call id="a19" endpoint="timeout">
+                    <parameters>
+                      <label>timeout2</label>
+                      <arguments>
+                        <!--<timeout>6</timeout>-->
+                        <timeout>1.2</timeout>
+                      </arguments>
+                    </parameters>
+                    <annotations>
+                      <_generic/>
+                      <_timing>
+                        <_timing_weight/>
+                        <_timing_avg/>
+                        <explanations/>
+                      </_timing>
+                      <_shifting>
+                        <_shifting_type>Duration</_shifting_type>
+                      </_shifting>
+                      <_context_data_analysis>
+                        <probes/>
+                        <ips/>
+                      </_context_data_analysis>
+                      <report>
+                        <url/>
+                      </report>
+                      <_notes>
+                        <_notes_general/>
+                      </_notes>
+                    </annotations>
+                    <documentation>
+                      <input/>
+                      <output/>
+                      <implementation>
+                        <description/>
+                      </implementation>
+                    </documentation>
+                  </call>
+                </parallel_branch>
+              </parallel>
+            </loop>
+            <call id="a4" endpoint="timeout">
+              <parameters>
+                <label>loop_end</label>
+                <arguments>
+                  <!--<timeout>5</timeout>-->
+                  <timeout>1</timeout>
+                </arguments>
+              </parameters>
+              <annotations>
+                <_generic/>
+                <_timing>
+                  <_timing_weight/>
+                  <_timing_avg/>
+                  <explanations/>
+                </_timing>
+                <_shifting>
+                  <_shifting_type>Duration</_shifting_type>
+                </_shifting>
+                <_context_data_analysis>
+                  <probes/>
+                  <ips/>
+                </_context_data_analysis>
+                <report>
+                  <url/>
+                </report>
+                <_notes>
+                  <_notes_general/>
+                </_notes>
+              </annotations>
+              <documentation>
+                <input/>
+                <output/>
+                <implementation>
+                  <description/>
+                </implementation>
+              </documentation>
+            </call>
+          </otherwise>
+        </choose>
+      </loop>
+    </description>
+  </description>
+  <transformation>
+    <description type="copy"/>
+    <dataelements type="none"/>
+    <endpoints type="none"/>
+  </transformation>
+</testset>
